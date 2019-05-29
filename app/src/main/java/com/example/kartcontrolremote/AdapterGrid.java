@@ -67,18 +67,23 @@ public class AdapterGrid extends Adapter<AdapterGrid.KartViewHolder> {
         }
 
 
-        holder.tile.setOnLongClickListener(new OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                if (AdapterGrid.this.mListener.gridCheckActive(v, position)) {
-                    AdapterGrid.this.mListener.dialog(position);
-                }
-                return true;
-            }
-        });
+//        holder.tile.setOnLongClickListener(new OnLongClickListener() {
+//            public boolean onLongClick(View v) {
+//                if (AdapterGrid.this.mListener.gridCheckActive(v, position)) {
+//                    AdapterGrid.this.mListener.dialog(position);
+//                }
+//                return true;
+//            }
+//        });
         holder.tile.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 if (!AdapterGrid.this.mListener.gridCheckActive(v, position)) {
                     AdapterGrid.this.mListener.makeKartActive(v, position);
+                }else{
+
+
+                    AdapterGrid.this.mListener.dialog(position);
+
                 }
             }
         });
